@@ -11,4 +11,5 @@ build/
 *.njsproj
 *.sln
 *.sw?
+reso/
 
