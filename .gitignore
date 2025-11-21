@@ -4,4 +4,11 @@ dist/
 .DS_Store
 out/
 build/
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 

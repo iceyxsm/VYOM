@@ -6,12 +6,19 @@ function createWindow() {
     width: 1200,
     height: 800,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
-    }
+      preload: path.join(__dirname, '../preload/preload.js'),
+      nodeIntegration: false,
+      contextIsolation: true
+    },
+    icon: path.join(__dirname, '../../assets/icon.png')
   });
 
-  mainWindow.loadFile('index.html');
+  mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'));
+
+  // Open DevTools in development
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow.webContents.openDevTools();
+  }
 }
 
 app.whenReady().then(() => {
